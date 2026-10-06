@@ -1,0 +1,131 @@
+#========ADMIN=====
+#api call for register admin
+###
+POST http://127.0.0.1:8000/admin-register/
+Content-Type: application/json
+
+{
+  "username":"superuser",
+  "email":"superuser@gmail.com",
+  "password":"superuser"
+}
+
+#==========TURF=========
+
+#api call for list all turfs
+###
+GET http://127.0.0.1:8000/turfs/
+Accept: application/json
+Authorization: Basic superuser:superuser
+
+#api call for adding a turf
+###
+POST http://127.0.0.1:8000/turfs/
+Content-Type: application/json
+Authorization: Basic superuser:superuser
+
+{
+  "name":"KickAPLY",
+  "location":"Eranakulam",
+  "phone":6078989900,
+  "fee":350
+}
+
+#api call for fetch a turf
+###
+GET http://127.0.0.1:8000/turfs/2/
+Accept: application/json
+Authorization: Basic superuser:superuser
+
+#api call for update a turf detail
+###
+PUT http://127.0.0.1:8000/turfs/2/
+Content-Type: application/json
+Authorization: Basic superuser:superuser
+
+{
+  "name":"KickPLY",
+  "location":"Eranakulam",
+  "phone":6078989900,
+  "fee":350
+}
+#api call for delete a turf
+###
+DELETE http://127.0.0.1:8000/turfs/3/
+Accept: application/json
+Authorization: Basic superuser:superuser
+
+#=========Booking=======
+#api call for list all bookings
+###
+GET http://127.0.0.1:8000/bookings/
+Accept: application/json
+
+#api call for add bookings
+###
+POST http://127.0.0.1:8000/bookings/
+Content-Type: application/json
+
+{
+  "team_name":"SEVENS",
+  "phone":"9898989870",
+  "turf":1,
+  "booking_time":"20:00:00",
+  "booking_date":"2026-10-5",
+  "duration":  "02:00:00"
+}
+
+#api call for fetch a booking
+###
+GET http://127.0.0.1:8000/bookings/1/
+Accept: application/json
+
+#api call for update a booking
+###
+PUT http://127.0.0.1:8000/bookings/1/
+Content-Type: application/json
+
+{
+  "team_name":"ZOOM",
+  "phone":"989898998",
+  "turf":1,
+  "booking_time":"18:00:00",
+  "booking_date":"2026-10-5",
+  "duration":  "02:00:00"
+}
+
+#api call for delete a booking data
+###
+DELETE http://127.0.0.1:8000/bookings/1/
+Accept: application/json
+
+#==========book_now_v2============
+#api call for register a user
+###
+POST http://127.0.0.1:8000/v2/book_now/signup/
+Content-Type: application/json
+
+{
+  "username":"sam",
+  "email":"sam@gmail.com",
+  "password":"sam@123"
+}
+# api call for list all bookings
+###
+GET http://127.0.0.1:8000/v2/book_now/bookings/
+Accept: application/json
+
+#api call for create a booking
+###
+POST http://127.0.0.1:8000/v2/book_now/bookings/
+Content-Type: application/json
+
+{
+  "team_name":"mnc",
+  "phone":"9090909090",
+  "turf":1,
+  "booking_date":"2026-10-8",
+  "booking_time":"16:00:00",
+  "duration":"02:00:00"
+
+}
